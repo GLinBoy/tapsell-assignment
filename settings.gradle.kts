@@ -8,3 +8,5 @@
  */
 
 rootProject.name = "tapsell"
+
+include("dto")
