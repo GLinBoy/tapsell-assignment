@@ -10,3 +10,4 @@
 rootProject.name = "tapsell"
 
 include("dto")
+include("edge")
