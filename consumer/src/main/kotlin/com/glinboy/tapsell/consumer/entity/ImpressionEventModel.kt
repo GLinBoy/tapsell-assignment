@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document
 data class ImpressionEventModel(
     @Id
-    val requestId: String = ObjectId.get().toString(),
+    val requestId: String,
     val timestamp: Long,
     val adId: String,
     val adTitle: String,

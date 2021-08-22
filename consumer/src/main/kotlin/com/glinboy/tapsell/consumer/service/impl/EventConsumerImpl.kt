@@ -21,6 +21,7 @@ class EventConsumerImpl(private val impressionRepository: ImpressionEventReposit
     override fun receiveImpressionEvent(event: ImpressionEvent) {
         logger.info("Impression event received: {}", event.toString())
         val eventModel = ImpressionEventModel(
+            requestId = event.requestId,
             timestamp = event.timestamp,
             adId = event.adId,
             adTitle = event.adTitle,

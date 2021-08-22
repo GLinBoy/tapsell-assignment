@@ -15,9 +15,9 @@ import javax.validation.Valid
 class EventController(private val eventService: EventServiceApi) {
 
     @PostMapping("/impressions")
-    fun impressionEventHandler(@Valid @RequestBody event: ImpressionEvent): ResponseEntity<Void> {
-        eventService.sendImpressionEvent(event)
-        return ResponseEntity.ok().build()
+    fun impressionEventHandler(@Valid @RequestBody event: ImpressionEvent): ResponseEntity<ImpressionEvent> {
+        val sendImpressionEvent = eventService.sendImpressionEvent(event)
+        return ResponseEntity.ok(sendImpressionEvent)
     }
 
     @PostMapping("/clicks")
